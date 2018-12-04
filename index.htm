@@ -51,6 +51,7 @@
   <body>
     <h1>
       Jan P<a
+        id="oWithUmlaut"
         href="javascript:doBarrelRoll()"
         title="This is an &quot;o with umlaut&quot;, sometimes spelled as &quot;oe&quot;. What will clicking it do?"
         >&ouml;</a
@@ -81,6 +82,15 @@
     <script>
       function doBarrelRoll() {
         var body = document.body;
+        var o = document.getElementById("oWithUmlaut");
+        var bodyRect = body.getBoundingClientRect();
+        var oRect = o.getBoundingClientRect();
+        var x = (oRect.left + oRect.right) / 2 - bodyRect.left;
+        var y = (oRect.top + oRect.bottom) / 2 - bodyRect.top;
+        body.style.transformOriginX = x + "px";
+        body.style.transformOriginY = y + "px";
+        body.style.webkitTransformOriginX = x + "px";
+        body.style.webkitTransformOriginY = y + "px";
         if (body.className === "barrelroll") {
           body.className = "barrelroll-reverse";
         } else {
