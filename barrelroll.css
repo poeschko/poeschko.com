@@ -1,0 +1,29 @@
+@keyframes roll {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes roll-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+body.barrelroll,
+body.barrelroll-reverse {
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  overflow: hidden;
+}
+body.barrelroll {
+  animation-name: roll;
+}
+body.barrelroll-reverse {
+  animation-name: roll-reverse;
+  animation-direction: reverse;
+}
