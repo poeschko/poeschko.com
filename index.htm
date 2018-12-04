@@ -81,8 +81,16 @@
       with me.
     </p>
     <script>
+      var body = document.body;
+      body.addEventListener(
+        "animationend",
+        function(event) {
+          body.className = "";
+        },
+        false
+      );
+
       function doBarrelRoll() {
-        var body = document.body;
         var o = document.getElementById("oWithUmlaut");
         var bodyRect = body.getBoundingClientRect();
         var oRect = o.getBoundingClientRect();
