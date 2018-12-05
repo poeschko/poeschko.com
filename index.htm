@@ -81,6 +81,7 @@
       with me.
     </p>
     <script>
+      var isForward = true;
       var body = document.body;
       body.addEventListener(
         "animationend",
@@ -100,11 +101,12 @@
         body.style.transformOriginY = y + "px";
         body.style.webkitTransformOriginX = x + "px";
         body.style.webkitTransformOriginY = y + "px";
-        if (body.className === "barrelroll") {
-          body.className = "barrelroll-reverse";
-        } else {
+        if (isForward) {
           body.className = "barrelroll";
+        } else {
+          body.className = "barrelroll-reverse";
         }
+        isForward = !isForward;
       }
     </script>
     <link rel="stylesheet" href="./barrelroll.css" />
