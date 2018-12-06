@@ -4,6 +4,6 @@ RewriteRule (.*) https://poeschko.com/$1 [L]
 
 AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript image/svg+xml
 
-<FilesMatch "\.(?i:css|png|svg|ttf|woff2)$">
-Header set Cache-Control "max-age=172800, public"
+<FilesMatch "\.(?i:css|png|ico|svg|ttf|woff2)$">
+Header set Cache-Control "max-age=604800, public"
 </FilesMatch>
